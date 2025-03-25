@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  llmstack:
+    build:
+      context: .
+      dockerfile: runner/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./.llmstack:/app/.llmstack
+    environment:
+      # You can define environment variables here, if needed
+    restart: unless-stopped
